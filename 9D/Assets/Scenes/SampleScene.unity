@@ -230,6 +230,7 @@ MonoBehaviour:
   offset: {x: 0, y: 3, z: -5}
   cameraTransform: {fileID: 330585546}
   sensibility: 5
+  isInverted: 0
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,6 +700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
   speed: 5
   rotationspeed: 5
+  cameraTransform: {fileID: 330585546}
 --- !u!4 &1513846173
 Transform:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class CameraSystem : MonoBehaviour
     public Vector3 offset;
     public Transform cameraTransform;
     public float sensibility = 5f;
+    public bool isInverted;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -17,6 +18,8 @@ public class CameraSystem : MonoBehaviour
         cameraTransform.rotation = targetRotation;
         transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime * 5);
         cameraTransform.localPosition = offset;
-        transform.Rotate(0f, Input.mousePositionDelta.x * Time.deltaTime * sensibility, 0f);
+        float degrees = Input.mousePositionDelta.x * Time.deltaTime * sensibility;
+        float sing = isInverted ? -1 : 1;
+        transform.Rotate(0f, degrees * sing,  0f);
     }
 }
